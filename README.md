@@ -1,6 +1,6 @@
 # Proyecto LocalTrack
 
-
+https://github.com/Bryan-Campuzano/LocalTrack/blob/main/front/static/front/images/logo%20inv.png
 
 **LocalTrack** es una plataforma CRM modular diseñada para la gestión de inventarios, ventas, usuarios, recursos humanos y análisis de datos en pequeñas y medianas empresas. El proyecto ofrece una solución centralizada y fácil de usar para mejorar la eficiencia de las operaciones diarias.
 
