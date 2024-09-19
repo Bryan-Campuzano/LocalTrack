@@ -91,8 +91,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'localtrack',
-        'USER': 'tu_usuario_mysql',
-        'PASSWORD': 'tu_contraseña_mysql',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
