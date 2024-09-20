@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Module Not Found{% endblock %}
+
+{% block content %}
+    <h2>Module Not Found</h2>
+    <p>The requested module is currently unavailable or not yet implemented. Please check back later or contact support for more information.</p>
+    
+    <a href="{% url 'modules' %}">Go back to Modules</a>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Sales Orders{% endblock %}
+
+{% block content %}
+    <h2>Sales Orders</h2>
+    <a href="{% url 'orders_new' %}" class="btn btn-primary">Create New Order</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Client</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.client }}</td>
+                <td>{{ order.total }}</td>
+                <td>
+                    <a href="{% url 'orders_edit' order.id %}">Edit</a>
+                    <a href="{% url 'orders_delete' order.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

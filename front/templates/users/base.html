@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Localtrack{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'front/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Localtrack</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'inventory' %}">Inventory</a></li>
+                <li><a href="{% url 'sales' %}">Sales</a></li>
+                <li><a href="{% url 'analytics' %}">Analytics</a></li>
+                <li><a href="{% url 'users' %}">Users</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content specific to each view will go here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Localtrack</p>
+    </footer>
+</body>
+</html>

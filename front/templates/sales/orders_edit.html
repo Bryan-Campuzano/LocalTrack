@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Order{% endblock %}
+
+{% block content %}
+    <h2>Edit Order</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="client">Client:</label>
+        <select id="client" name="client">
+            {% for client in clients %}
+            <option value="{{ client.id }}" {% if order.client.id == client.id %}selected{% endif %}>{{ client.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="product">Product:</label>
+        <select id="product" name="product">
+            {% for product in products %}
+            <option value="{{ product.id }}" {% if order.product.id == product.id %}selected{% endif %}>{{ product.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="{{ order.quantity }}" required>
+
+        <label for="date">Order Date:</label>
+        <input type="date" id="date" name="date" value="{{ order.date }}" required>
+
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit PQRS{% endblock %}
+
+{% block content %}
+    <h2>Edit PQRS</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+            <option value="request" {% if pqrs.type == "request" %}selected{% endif %}>Request</option>
+            <option value="complaint" {% if pqrs.type == "complaint" %}selected{% endif %}>Complaint</option>
+            <option value="claim" {% if pqrs.type == "claim" %}selected{% endif %}>Claim</option>
+            <option value="suggestion" {% if pqrs.type == "suggestion" %}selected{% endif %}>Suggestion</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{{ pqrs.description }}</textarea>
+
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}

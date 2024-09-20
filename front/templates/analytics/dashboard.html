@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Analytics Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Analytics Dashboard</h2>
+    <p>Key metrics and performance indicators will be displayed here.</p>
+    <!-- Include a section for visual charts using Chart.js or other libraries -->
+    <div id="chart-container">
+        <canvas id="dashboardChart"></canvas>
+    </div>
+    <script src="{% static 'front/js/dashboard.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}PQRS Form{% endblock %}
+
+{% block content %}
+    <h2>Submit PQRS</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+            <option value="request">Request</option>
+            <option value="complaint">Complaint</option>
+            <option value="claim">Claim</option>
+            <option value="suggestion">Suggestion</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

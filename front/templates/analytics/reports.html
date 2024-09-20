@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+    <h2>Generate Reports</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="report_type">Report Type:</label>
+        <select id="report_type" name="report_type">
+            <option value="sales">Sales</option>
+            <option value="inventory">Inventory</option>
+            <option value="clients">Clients</option>
+        </select>
+
+        <label for="date_range">Date Range:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <input type="date" id="end_date" name="end_date" required>
+
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <!-- The generated report would be displayed here -->
+    <div id="report-results">
+        <!-- Report results go here -->
+    </div>
+{% endblock %}

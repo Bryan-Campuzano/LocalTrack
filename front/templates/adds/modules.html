@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Available Modules{% endblock %}
+
+{% block content %}
+    <h2>Available Modules</h2>
+    <p>Select a module to add to the system. Note: All modules redirect to the "Not Found" page as they are not implemented yet.</p>
+    
+    <ul>
+        <li><a href="{% url 'not_found_module' %}">Sales Module</a></li>
+        <li><a href="{% url 'not_found_module' %}">Inventory Module</a></li>
+        <li><a href="{% url 'not_found_module' %}">Human Resources Module</a></li>
+        <li><a href="{% url 'not_found_module' %}">Analytics Module</a></li>
+        <li><a href="{% url 'not_found_module' %}">Customer Support Module</a></li>
+    </ul>
+{% endblock %}

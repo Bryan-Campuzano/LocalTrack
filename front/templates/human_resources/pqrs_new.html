@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}New PQR{% endblock %}
+
+{% block content %}
+    <h2>Create New PQR</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="pqr_type">PQR Type:</label>
+        <select id="pqr_type" name="pqr_type" required>
+            <option value="Petition">Petition</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Claim">Claim</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+
+        <label for="customer_email">Customer Email:</label>
+        <input type="email" id="customer_email" name="customer_email" required>
+
+        <button type="submit">Submit PQR</button>
+    </form>
+{% endblock %}

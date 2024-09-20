@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Verification Code Sent{% endblock %}
+
+{% block content %}
+    <h2>Verification Code Sent</h2>
+    <p>We have sent a verification code to your email. Please check your inbox and use the code to reset your password.</p>
+
+    <form method="post" action="{% url 'password_recovery' %}">
+        {% csrf_token %}
+        <label for="verification_code">Enter Verification Code:</label>
+        <input type="text" id="verification_code" name="verification_code" required>
+
+        <button type="submit">Verify</button>
+    </form>
+
+    <a href="{% url 'resend_verification_code' %}">Resend Verification Code</a>
+{% endblock %}

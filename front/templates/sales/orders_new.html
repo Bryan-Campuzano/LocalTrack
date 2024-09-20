@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}New Order{% endblock %}
+
+{% block content %}
+    <h2>Add New Order</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="client">Client:</label>
+        <select id="client" name="client">
+            {% for client in clients %}
+            <option value="{{ client.id }}">{{ client.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="product">Product:</label>
+        <select id="product" name="product">
+            {% for product in products %}
+            <option value="{{ product.id }}">{{ product.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <label for="date">Order Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Add Order</button>
+    </form>
+{% endblock %}
