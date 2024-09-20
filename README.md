@@ -174,9 +174,8 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.
 
 ## Expresiones de Gratitud 🎁
 
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
-* Da las gracias públicamente 🤓.
+* Gracias a Camilo y Julio por su dedicacion en el proyecto📢
+* y tambien gracias a la cupula educativa del sena, por su compromiso y aporte a mi educacion, gracias totales 🤓.
 
 ---
 
