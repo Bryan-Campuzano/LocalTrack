@@ -69,7 +69,7 @@ STATIC_URL = '/static/'
 
 # Si tienes archivos estáticos globales
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/front/css/'),
+    os.path.join(BASE_DIR, 'front/static/front/css/'),
 ]
 
 WSGI_APPLICATION = 'localtrack.wsgi.application'

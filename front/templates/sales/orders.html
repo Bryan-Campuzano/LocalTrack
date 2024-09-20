@@ -9,20 +9,21 @@
         <thead>
             <tr>
                 <th>Order ID</th>
-                <th>Client</th>
-                <th>Total</th>
-                <th>Actions</th>
+                <th>Fecha</th>
+                <th>Cliente</th>
+                <th>Venta</th>
             </tr>
         </thead>
         <tbody>
             {% for remision in remisiones %}
             <tr>
-                <td>{{ order.id }}</td>
-                <td>{{ order.client }}</td>
-                <td>{{ order.total }}</td>
+                <td>{{ remision.id_remision }}</td>
+                <td>{{ remision.fecha }}</td>
+                <td>{{ remision.cliente_id }}</td>
+                <td>{{ remision.venta_id }}</td>
                 <td>
-                    <a href="{% url 'orders_edit' order.id %}">Edit</a>
-                    <a href="{% url 'orders_delete' order.id %}">Delete</a>
+                    <a href="{% url 'orders_edit' rem.id_remision %}">Edit</a>
+                    <a href="{% url 'orders_delete' rem.id_remision %}">Delete</a>
                 </td>
             </tr>
             {% endfor %}

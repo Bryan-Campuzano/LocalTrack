@@ -36,8 +36,8 @@ def clients_delete(request, id):
     return render(request, 'sales/clients_delete.html', {'client': client})
 
 def orders_list(request):
-    orders = Remision.objects.all()
-    return render(request, 'sales/orders.html', {'orders': Remision})
+    remisiones = Remision.objects.all()
+    return render(request, 'sales/orders.html', {'remisiones': remisiones})
 
 def orders_new(request):
     if request.method == 'POST':
@@ -50,14 +50,14 @@ def orders_new(request):
     return render(request, 'sales/orders_new.html', {'form': form})
 
 def orders_edit(request, id):
-    order = get_object_or_404(Remision, id=id)
+    rem = get_object_or_404(Remision, id=id)
     if request.method == 'POST':
-        form = OrderForm(request.POST, instance=Remision)
+        form = OrderForm(request.POST, instance=rem)
         if form.is_valid():
             form.save()
             return redirect('sales:orders_list')
     else:
-        form = OrderForm(instance=order)
+        form = OrderForm(instance=rem)
     return render(request, 'sales/orders_edit.html', {'form': form})
 
 def orders_delete(request, id):
@@ -65,4 +65,4 @@ def orders_delete(request, id):
     if request.method == 'POST':
         order.delete()
         return redirect('sales:orders_list')
-    return render(request, 'sales/orders_delete.html', {'order': Remision})
+    return render(request, 'sales/orders_delete.html', {'order': order})
