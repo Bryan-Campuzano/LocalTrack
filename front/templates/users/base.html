@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Localtrack{% endblock %}</title>
@@ -12,10 +13,10 @@
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'inventory' %}">Inventory</a></li>
-                <li><a href="{% url 'sales' %}">Sales</a></li>
-                <li><a href="{% url 'analytics' %}">Analytics</a></li>
-                <li><a href="{% url 'users' %}">Users</a></li>
+                <li><a href="{% url 'inventory_list' %}">Inventory</a></li>
+                <li><a href="{% url 'orders_list' %}">Orders</a></li>
+                <li><a href="{% url 'dashboard' %}">Analytics</a></li>
+                <li><a href="{% url 'profile' %}">Users</a></li>
             </ul>
         </nav>
     </header>

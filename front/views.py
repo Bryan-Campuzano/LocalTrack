@@ -30,5 +30,5 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 def home(request):
-    return render(request, 'home.html')  # Asegúrate de que 'home.html' exista en tu carpeta de plantillas.
+    return render(request, 'users/home.html')  # Asegúrate de que 'home.html' exista en tu carpeta de plantillas.
 

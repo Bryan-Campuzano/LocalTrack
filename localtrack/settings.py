@@ -52,7 +52,7 @@ ROOT_URLCONF = 'localtrack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'front', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +69,7 @@ STATIC_URL = '/static/'
 
 # Si tienes archivos estáticos globales
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/home/bryan/Proyectos de Programación/LocalTrack - PROYECTO FINAL ADSO/localtrack/front/static'),
+    os.path.join(BASE_DIR, 'static/front/css/'),
 ]
 
 WSGI_APPLICATION = 'localtrack.wsgi.application'
