@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'users/base.html' %}
 
 {% block title %}Available Modules{% endblock %}
 
@@ -11,6 +11,5 @@
         <li><a href="{% url 'not_found_module' %}">Inventory Module</a></li>
         <li><a href="{% url 'not_found_module' %}">Human Resources Module</a></li>
         <li><a href="{% url 'not_found_module' %}">Analytics Module</a></li>
-        <li><a href="{% url 'not_found_module' %}">Customer Support Module</a></li>
     </ul>
 {% endblock %}

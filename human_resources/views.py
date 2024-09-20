@@ -14,7 +14,7 @@ def pqrs_new(request):
             return redirect('human_resources:pqrs_list')  # Redirigir a la lista de PQRS
     else:
         form = PQRSForm()
-    return render(request, 'human_resources/pqrs_form.html', {'form': form})  # Asegúrate de que esta plantilla exista
+    return render(request, 'human_resources/pqrs_new.html', {'form': form})  # Asegúrate de que esta plantilla exista
 
 def pqrs_edit(request, id):
     pqrs = get_object_or_404(Pqrs, id=id)  # Obtener el PQRS por id
@@ -25,11 +25,11 @@ def pqrs_edit(request, id):
             return redirect('human_resources:pqrs_list')  # Redirigir a la lista de PQRS
     else:
         form = PQRSForm(instance=pqrs)
-    return render(request, 'human_resources/pqrs_form.html', {'form': form})  # Asegúrate de que esta plantilla exista
+    return render(request, 'human_resources/pqrs_edit.html', {'form': form})  # Asegúrate de que esta plantilla exista
 
 def pqrs_delete(request, id):
     pqrs = get_object_or_404(Pqrs, id=id)  # Obtener el PQRS por id
     if request.method == "POST":
         pqrs.delete()  # Borrar el PQRS
         return redirect('human_resources:pqrs_list')  # Redirigir a la lista de PQRS
-    return render(request, 'human_resources/pqrs_confirm_delete.html', {'pqrs': pqrs})  # Asegúrate de que esta plantilla exista
+    return render(request, 'human_resources/pqrs_delete.html', {'pqrs': pqrs})  # Asegúrate de que esta plantilla exista

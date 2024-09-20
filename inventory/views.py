@@ -4,7 +4,7 @@ from .forms import ProductForm  # Importa el formulario que hayas creado para ma
 
 def inventory_list(request):
     products = Producto.objects.all()
-    return render(request, 'inventory/inventory_list.html', {'products': products})
+    return render(request, 'inventory/inventory.html', {'products': products})
 
 def product_new(request):
     if request.method == "POST":
@@ -14,7 +14,7 @@ def product_new(request):
             return redirect('inventory:inventory_list')
     else:
         form = ProductForm()
-    return render(request, 'inventory/product_form.html', {'form': form})
+    return render(request, 'inventory/product_new.html', {'form': form})
 
 def product_edit(request, id):
     product = get_object_or_404(Producto, id=id)
@@ -25,11 +25,11 @@ def product_edit(request, id):
             return redirect('inventory:inventory_list')
     else:
         form = ProductForm(instance=product)
-    return render(request, 'inventory/product_form.html', {'form': form})
+    return render(request, 'inventory/product_edit.html', {'form': form})
 
 def product_delete(request, id):
     product = get_object_or_404(Producto, id=id)
     if request.method == "POST":
         product.delete()
         return redirect('inventory:inventory_list')
-    return render(request, 'inventory/product_confirm_delete.html', {'product': Producto})
+    return render(request, 'inventory/product_delete.html', {'product': Producto})

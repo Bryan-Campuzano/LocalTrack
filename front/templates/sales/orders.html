@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'users/base.html' %}
 
 {% block title %}Sales Orders{% endblock %}
 
@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for order in orders %}
+            {% for remision in remisiones %}
             <tr>
                 <td>{{ order.id }}</td>
                 <td>{{ order.client }}</td>

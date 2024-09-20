@@ -15,6 +15,7 @@ urlpatterns = [
     path('front/', front_views.login_view, name='login'),
     path('front/', front_views.register, name='register'),
     path('front/', front_views.home_view, name='home'),
+    path('front/usr_profile', front_views.usr_profile, name='usr_profile'),
     path('human_resources/pqrs/', hr_views.pqrs_list, name='pqrs_list'),
     path('human_resources/pqrs/new/', hr_views.pqrs_new, name='pqrs_new'),
     path('human_resources/pqrs/edit/<int:id>/', hr_views.pqrs_edit, name='pqrs_edit'),
@@ -32,6 +33,6 @@ urlpatterns = [
     path('sales/orders/edit/<int:id>/', sales_views.orders_edit, name='orders_edit'),
     path('sales/orders/delete/<int:id>/', sales_views.orders_delete, name='orders_delete'),
     path('users/profile/', user_views.profile, name='profile'),
+    path('users/password/', user_views.password, name='password'),
     path('users/password_change/', user_views.password_change, name='password_change'),
-    path('users/password_new/', user_views.password_new, name='password_new'),
 ]

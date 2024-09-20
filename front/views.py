@@ -32,3 +32,6 @@ def register(request):
 def home(request):
     return render(request, 'users/home.html')  # Asegúrate de que 'home.html' exista en tu carpeta de plantillas.
 
+def usr_profile(request):
+    return render(request, 'users/usr_profile.html')  # Asegúrate de que 'home.html' exista en tu carpeta de plantillas.
+

@@ -20,9 +20,9 @@ def password_change(request):
             return redirect('users:profile')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'users/password_change.html', {'form': form})
+    return render(request, 'users/password.html', {'form': form})
 
 @login_required
-def password_new(request):
+def password(request):
     # Agrega lógica si deseas permitir a los usuarios establecer una nueva contraseña
-    return render(request, 'users/password_new.html')
+    return render(request, 'users/password.html')
