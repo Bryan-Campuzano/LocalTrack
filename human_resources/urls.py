@@ -1,9 +1,11 @@
 from django.urls import path
 from . import views
 
-# vistas asociadas a la gestion humana
+app_name = 'human_resources'
+
 urlpatterns = [
-    path('login/', views.login_view, name='login'),
-    path('register/', views.register_view, name='register'),
-    # Agrega más rutas según tus necesidades
+    path('pqrs/', views.pqrs_list, name='pqrs_list'),
+    path('pqrs/new/', views.pqrs_new, name='pqrs_new'),
+    path('pqrs/edit/<int:id>/', views.pqrs_edit, name='pqrs_edit'),
+    path('pqrs/delete/<int:id>/', views.pqrs_delete, name='pqrs_delete'),
 ]

@@ -1,9 +1,11 @@
 from django.urls import path
 from . import views
 
-# vistas asociadas a inventario
+app_name = 'inventory'
+
 urlpatterns = [
-    path('login/', views.login_view, name='login'),
-    path('register/', views.register_view, name='register'),
-    # Agrega más rutas según tus necesidades
+    path('', views.inventory_list, name='inventory_list'),
+    path('product/new/', views.product_new, name='product_new'),
+    path('product/edit/<int:id>/', views.product_edit, name='product_edit'),
+    path('product/delete/<int:id>/', views.product_delete, name='product_delete'),
 ]

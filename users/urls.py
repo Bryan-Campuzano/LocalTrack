@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
 
-# vistas asociadas a los usuarios
+app_name = 'users'
+
 urlpatterns = [
-    path('login/', views.login_view, name='login'),
-    path('register/', views.register_view, name='register'),
-    # Agrega más rutas según tus necesidades
+    path('profile/', views.profile, name='profile'),
+    path('password/', views.password_change, name='password_change'),
+    path('password/new/', views.password_new, name='password_new'),
 ]
